@@ -3,7 +3,29 @@ header{
 
     .logo{
         font-weight: 600;
-        font-size: 26px;
+        font-size: 50px;
+        
+    }
+
+    .nav {
+        float: right;
+        list-style: none;
+        margin-top: 5px;
+    }
+    li{
+        display: inline;
+        margin-left: 25px;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 500;
+        transition: opacity 500ms ease;
+        
+        &:hover{
+            opacity: 0.5;
+
+    }
+
+   
     }
 
     .presentation{
@@ -16,7 +38,33 @@ header{
         background-repeat: no-repeat;
         position: relative;
         border-radius: 15px;
+        
+        &::after{
+            content: "Подберем лучший тур с заботой и любовью";
+            color:rgb(104, 15, 221);
+            position: absolute;
+            top: 350px;
+            right: 200px;
+            width: 780px;
+            font-size: 36px;
+            font-weight: 600px;
+        
+        }
+        &::before{
+            content: "по отличной цене";
+            color:rgb(104, 15, 221);
+            position: absolute;
+            top: 400px;
+            right: 100px;
+            width: 500px;
+            font-size: 36px;
+            font-weight: 600px;
+        
+        }
+           
+
     }
 
-    
+
+
 }
