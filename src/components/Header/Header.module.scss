@@ -1,11 +1,46 @@
 header{
 
+    .icon{
+        font-size: 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
 
     .logo{
         font-weight: 600;
         font-size: 50px;
+
         
     }
+
+    .shopCartButton{
+        font-size: 30px;
+        float: right;
+        cursor: pointer;
+        transition: color 500ms ease;
+        margin-top: 10px;
+        margin-right: 20px;
+
+        &:hover,
+        &.active{
+            color: rgb(6, 136, 136);
+        }
+
+
+    }
+
+    .shopCart{
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 450px;
+        min-height: 100px;
+        background: rgb(49, 223, 223) ;
+        z-index: 1000;
+        box-shadow: 19px 19px 0px 2px rgba(0,0,0,0.66);
+-webkit-box-shadow: 19px 19px 0px 2px rgba (0,0,0,0.66);
+-moz-box-shadow: 19px 19px 0px 2px rgba (0,0,0,0.66);}
 
     .nav {
         float: right;

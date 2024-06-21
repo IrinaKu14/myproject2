@@ -117,10 +117,15 @@ function App() {
     },
 
   ]);
-  return (
+  const [orders, setOrders]=useState([]);
+
+  const addToOrder=(item) =>{
+    setOrders([...orders,item]);
+  }
+    return (
     <div className="wraper">
-      <Header/>
-      <Items allItems={items}/>
+      <Header orders={orders}/>
+      <Items allItems={items} onAdd={addToOrder}/>
       <Footer/>
       
     </div>

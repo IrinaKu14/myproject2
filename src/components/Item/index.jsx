@@ -9,7 +9,7 @@ export default function Item(props){
     <h2>{props.item.title}</h2>
     <p>{props.item.desc}</p>
     <b>{props.item.price}</b>
-    <div className={styles.addToCard}>+</div>
+    <div className={styles.addToCard} on Click={()=>props.onAdd(props.item)}>+</div>
     </div>
     );
 }
