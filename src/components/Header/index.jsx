@@ -2,10 +2,35 @@ import React, {useState}  from "react";
 import styles from "./Header.module.scss";
 import { IoIosAirplane } from "react-icons/io";
 import { BsBasket2Fill } from "react-icons/bs";
+import Orders from "../Orders";
 
 
-export default function Header (){
+export default function Header (props){
     let [cartOpen, setcartOpen]=useState(false);
+
+    const showOrders=(props)=>{
+        return (
+            <>
+                {props.orders.map(el=>(
+                    <Orders key={el.id} item={el} onDelete={props.onDelete}/>
+                ))}
+            
+            
+            </>
+
+        );
+    }
+
+    const showNothing=()=>{
+        return(
+            <div className={styles.empty}>
+                <h2>Корзина пуста!</h2>
+            </div>
+        );
+    }
+
+
+
 return (
     <header>
         <div>
@@ -24,7 +49,7 @@ return (
 
         {cartOpen && (
             <div className={styles.shopCart}>
-
+                {props.orders.length>0 ? showOrders(props): showNothing()}
 
             </div>
         )}

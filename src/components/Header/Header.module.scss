@@ -1,5 +1,16 @@
 header{
 
+    position: relative;
+
+
+    .empty{
+        h2{
+            font-size: 20px;
+            margin: 20px auto;
+            text-align: center;
+        }
+    }
+
     .icon{
         font-size: 40px;
         margin-right: 10px;
@@ -32,7 +43,7 @@ header{
 
     .shopCart{
         position: absolute;
-        top: 30px;
+        top:60px;
         right: 0;
         width: 450px;
         min-height: 100px;
