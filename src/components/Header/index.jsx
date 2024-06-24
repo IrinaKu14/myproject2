@@ -9,11 +9,15 @@ export default function Header (props){
     let [cartOpen, setcartOpen]=useState(false);
 
     const showOrders=(props)=>{
+        let summa=0;
+
+        props.orders.forEach(el=>summa+=Number.parseFloat(el.price))
         return (
             <>
                 {props.orders.map(el=>(
                     <Orders key={el.id} item={el} onDelete={props.onDelete}/>
                 ))}
+                <p className={styles.summa}>Итого: {new Intl.NumberFormat().format(summa)} ₽</p>
             
             
             </>
