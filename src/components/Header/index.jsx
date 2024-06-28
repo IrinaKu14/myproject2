@@ -3,10 +3,20 @@ import styles from "./Header.module.scss";
 import { IoIosAirplane } from "react-icons/io";
 import { BsBasket2Fill } from "react-icons/bs";
 import Orders from "../Orders";
+import PriceListPDF from "../PriceListPDF"
+import { saveAs } from "file-saver";
+import {pdf} from "@react-pdf/renderer";
 
 
 export default function Header (props){
     let [cartOpen, setcartOpen]=useState(false);
+
+    const handleDownloadPDF = async () =>{
+      const  pdfBlob =await pdf(<PriceListPDF items={props.items}/>).toBlob();
+        saveAs(pdfBlob, "PriceList.pdf");
+
+
+    }
 
     const showOrders=(props)=>{
         let summa=0;
@@ -44,6 +54,7 @@ return (
                 <li> О нас </li>
                 <li> Контакты </li>
                 <li> Личный кабинет </li>
+                <li onClick={handleDownloadPDF}> Скачать прайс-лист</li>
 
 
             </ul>
